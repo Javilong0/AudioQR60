@@ -2,13 +2,48 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Audio QR</title>
+  <title>Reproductor de Audio</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #d4f0ff, #ffffff);
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    h1 {
+      color: #333;
+      margin-bottom: 20px;
+      font-size: 2rem;
+    }
+
+    audio {
+      width: 300px;
+      max-width: 90%;
+      outline: none;
+    }
+
+    .player-box {
+      background: #ffffffcc;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+  </style>
 </head>
-<body style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh;">
-  <h2>Reproductor de Audio</h2>
-  <audio controls autoplay>
-    <source src="audio.mp3" type="audio/mpeg" />
-    Tu navegador no soporta la reproducción de audio.
-  </audio>
+<body>
+  <div class="player-box">
+    <h1>Escucha el mensaje</h1>
+    <audio controls autoplay>
+      <source src="audio.mp3" type="audio/mpeg" />
+      Tu navegador no soporta la reproducción de audio.
+    </audio>
+  </div>
 </body>
 </html>
