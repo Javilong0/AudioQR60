@@ -1,68 +1,60 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <title>Mi Humilde Reflexión</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AudioQR60</title>
   <style>
     body {
-      margin: 0;
-      padding: 0;
-      height: 100vh;
-      background: linear-gradient(135deg, #d4f0ff, #ffffff);
       font-family: Arial, sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+      background-color: #f9f9f9;
+      padding: 20px;
+      max-width: 600px;
+      margin: auto;
     }
-
-    .logo {
-      width: 120px;
-      height: auto;
-      margin-bottom: 20px;
-      border-radius: 12px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
-    }
-
     h1 {
+      text-align: center;
       color: #333;
-      margin: 0;
-      font-size: 2rem;
-      text-align: center;
     }
-
-    h2 {
-      color: #666;
-      margin: 5px 0 20px;
-      font-size: 1.2rem;
-      font-weight: normal;
-      text-align: center;
+    ul {
+      list-style-type: none;
+      padding: 0;
     }
-
-    audio {
-      width: 300px;
-      max-width: 90%;
-      outline: none;
+    li {
+      margin-bottom: 15px;
     }
-
-    .player-box {
-      background: #ffffffcc;
-      padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-      text-align: center;
+    audio::-webkit-media-controls-panel {
+      background-color: #e0e0e0;
+    }
+    .nombre {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
     }
   </style>
 </head>
 <body>
-  <div class="player-box">
-    <img src="logo.png" alt="Logo" class="logo" />
-    <h1>Mi Humilde Reflexión</h1>
-    <h2>60 Cumpleaños de Yoli</h2>
-    <audio controls autoplay>
-      <source src="audio.mp3" type="audio/mpeg" />
-      Tu navegador no soporta la reproducción de audio.
-    </audio>
-  </div>
+
+  <h1>AudioQR60</h1>
+  <ul>
+    <li><span class="nombre">Javier</span><audio controls src="audio1.m4a"></audio></li>
+    <li><span class="nombre">Laura</span><audio controls src="audio2.m4a"></audio></li>
+    <li><span class="nombre">Cristina 1</span><audio controls src="audio3.m4a"></audio></li>
+    <li><span class="nombre">Cristina 2</span><audio controls src="audio4.m4a"></audio></li>
+    <li><span class="nombre">Damián</span><audio controls src="audio5.m4a"></audio></li>
+    <li><span class="nombre">Raúl</span><audio controls src="audio6.m4a"></audio></li>
+    <li><span class="nombre">Marcos</span><audio controls src="audio7.m4a"></audio></li>
+    <li><span class="nombre">Alma</span><audio controls src="audio8.m4a"></audio></li>
+    <li><span class="nombre">Álvaro</span><audio controls src="audio9.m4a"></audio></li>
+    <li><span class="nombre">Sole</span><audio controls src="audio10.m4a"></audio></li>
+    <li><span class="nombre">Mario</span><audio controls src="audio11.m4a"></audio></li>
+    <li><span class="nombre">Piluca</span><audio controls src="audio12.m4a"></audio></li>
+    <li><span class="nombre">Carlos</span><audio controls src="audio13.m4a"></audio></li>
+    <li><span class="nombre">Nerea</span><audio controls src="audio14.m4a"></audio></li>
+    <li><span class="nombre">Verónica</span><audio controls src="audio15.m4a"></audio></li>
+    <li><span class="nombre">Angelines</span><audio controls src="audio16.m4a"></audio></li>
+    <li><span class="nombre">Beatriz</span><audio controls src="audio17.m4a"></audio></li>
+  </ul>
+
 </body>
 </html>
