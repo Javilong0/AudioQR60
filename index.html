@@ -1,60 +1,62 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>AudioQR60</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #f9f9f9;
-      padding: 20px;
-      max-width: 600px;
-      margin: auto;
-    }
-    h1 {
+      background-color: #f0f2f5;
       text-align: center;
-      color: #333;
+      padding: 20px;
     }
-    ul {
-      list-style-type: none;
-      padding: 0;
+
+    img {
+      max-width: 200px;
+      margin-bottom: 30px;
     }
-    li {
-      margin-bottom: 15px;
+
+    .audio-block {
+      margin: 15px 0;
+      padding: 10px;
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
     }
-    audio::-webkit-media-controls-panel {
-      background-color: #e0e0e0;
-    }
-    .nombre {
-      display: block;
+
+    .audio-block p {
+      margin: 5px 0 10px;
       font-weight: bold;
-      margin-bottom: 5px;
+    }
+
+    audio {
+      width: 100%;
     }
   </style>
 </head>
 <body>
+  <img src="logo.png" alt="Logo AudioQR60">
 
-  <h1>AudioQR60</h1>
-  <ul>
-    <li><span class="nombre">Javier</span><audio controls src="audio1.m4a"></audio></li>
-    <li><span class="nombre">Laura</span><audio controls src="audio2.m4a"></audio></li>
-    <li><span class="nombre">Cristina 1</span><audio controls src="audio3.m4a"></audio></li>
-    <li><span class="nombre">Cristina 2</span><audio controls src="audio4.m4a"></audio></li>
-    <li><span class="nombre">Damián</span><audio controls src="audio5.m4a"></audio></li>
-    <li><span class="nombre">Raúl</span><audio controls src="audio6.m4a"></audio></li>
-    <li><span class="nombre">Marcos</span><audio controls src="audio7.m4a"></audio></li>
-    <li><span class="nombre">Alma</span><audio controls src="audio8.m4a"></audio></li>
-    <li><span class="nombre">Álvaro</span><audio controls src="audio9.m4a"></audio></li>
-    <li><span class="nombre">Sole</span><audio controls src="audio10.m4a"></audio></li>
-    <li><span class="nombre">Mario</span><audio controls src="audio11.m4a"></audio></li>
-    <li><span class="nombre">Piluca</span><audio controls src="audio12.m4a"></audio></li>
-    <li><span class="nombre">Carlos</span><audio controls src="audio13.m4a"></audio></li>
-    <li><span class="nombre">Nerea</span><audio controls src="audio14.m4a"></audio></li>
-    <li><span class="nombre">Verónica</span><audio controls src="audio15.m4a"></audio></li>
-    <li><span class="nombre">Angelines</span><audio controls src="audio16.m4a"></audio></li>
-    <li><span class="nombre">Beatriz</span><audio controls src="audio17.m4a"></audio></li>
-  </ul>
-
+  <div class="audio-block"><p>Javier</p><audio controls src="audio1.mp3"></audio></div>
+  <div class="audio-block"><p>Laura</p><audio controls src="audio2.mp3"></audio></div>
+  <div class="audio-block"><p>Cristina 1</p><audio controls src="audio3.mp3"></audio></div>
+  <div class="audio-block"><p>Cristina 2</p><audio controls src="audio4.mp3"></audio></div>
+  <div class="audio-block"><p>Damián</p><audio controls src="audio5.mp3"></audio></div>
+  <div class="audio-block"><p>Raúl</p><audio controls src="audio6.mp3"></audio></div>
+  <div class="audio-block"><p>Marcos</p><audio controls src="audio7.mp3"></audio></div>
+  <div class="audio-block"><p>Alma</p><audio controls src="audio8.mp3"></audio></div>
+  <div class="audio-block"><p>Álvaro</p><audio controls src="audio9.mp3"></audio></div>
+  <div class="audio-block"><p>Sole</p><audio controls src="audio10.mp3"></audio></div>
+  <div class="audio-block"><p>Mario</p><audio controls src="audio11.mp3"></audio></div>
+  <div class="audio-block"><p>Piluca</p><audio controls src="audio12.mp3"></audio></div>
+  <div class="audio-block"><p>Carlos</p><audio controls src="audio13.mp3"></audio></div>
+  <div class="audio-block"><p>Nerea</p><audio controls src="audio14.mp3"></audio></div>
+  <div class="audio-block"><p>Verónica</p><audio controls src="audio15.mp3"></audio></div>
+  <div class="audio-block"><p>Angelines</p><audio controls src="audio16.mp3"></audio></div>
+  <div class="audio-block"><p>Beatriz</p><audio controls src="audio17.mp3"></audio></div>
 </body>
 </html>
