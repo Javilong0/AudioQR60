@@ -2,18 +2,17 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Audiolibro – Los 60 de Yoli – Te Queremos</title>
   <style>
     body {
       margin: 0;
-      padding: 0;
       font-family: 'Segoe UI', sans-serif;
-      color: white;
-      text-align: center;
-      background: linear-gradient(-45deg, #3a1c71, #d76d77, #ffaf7b, #43cea2);
+      background: linear-gradient(-45deg, #1e3c72, #2a5298, #1e3c72, #0f2027);
       background-size: 400% 400%;
       animation: gradient 15s ease infinite;
+      color: white;
+      text-align: center;
     }
 
     @keyframes gradient {
@@ -23,80 +22,111 @@
     }
 
     h1 {
-      font-size: 2.5em;
-      margin: 1em 0;
+      font-size: 2em;
+      margin: 20px;
       text-shadow: 2px 2px 4px #000;
-      animation: pulse 4s infinite;
+      animation: fadeIn 2s ease-out;
     }
 
-    @keyframes pulse {
-      0%, 100% { text-shadow: 2px 2px 4px #000; }
-      50% { text-shadow: 2px 2px 10px #fff; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
-    .audio-container {
+    .audio-grid {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 1em;
-      padding: 2em;
+      gap: 1rem;
+      padding: 2rem;
     }
 
-    .audio-box {
-      background: rgba(0, 0, 0, 0.4);
-      border-radius: 1em;
-      padding: 1em;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-      width: 250px;
+    .audio-block {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 10px;
+      width: 260px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+      transition: transform 0.2s;
     }
 
-    .audio-box audio {
-      width: 100%;
-      filter: drop-shadow(1px 1px 1px black);
+    .audio-block:hover {
+      transform: scale(1.03);
     }
 
-    .audio-box audio::-webkit-media-controls-download-button {
-      display: none;
-    }
-
-    .audio-box audio::-webkit-media-controls-enclosure {
-      background-color: #222;
-      border-radius: 10px;
-    }
-
-    .audio-box span {
+    .audio-block span {
       display: block;
-      margin-bottom: 0.5em;
+      margin-bottom: 5px;
       font-weight: bold;
+      color: #e0e0e0;
     }
 
-    @media (max-width: 600px) {
-      .audio-box {
-        width: 90%;
-      }
+    audio {
+      width: 100%;
+      outline: none;
+      accent-color: #00bfff;
+    }
+
+    .sorpresa {
+      margin-top: 2rem;
+      font-size: 1.1rem;
+      cursor: pointer;
+      color: #fff;
+      background: #00bfff;
+      padding: 0.7rem 1.5rem;
+      border: none;
+      border-radius: 8px;
+      transition: background 0.3s ease;
+    }
+
+    .sorpresa:hover {
+      background: #008ecc;
     }
   </style>
 </head>
 <body>
+
   <h1>Audiolibro – Los 60 de Yoli – Te Queremos</h1>
 
-  <div class="audio-container">
-    <div class="audio-box"><span>Javier</span><audio controls src="audio1.mp3"></audio></div>
-    <div class="audio-box"><span>Laura</span><audio controls src="audio2.mp3"></audio></div>
-    <div class="audio-box"><span>Cristina</span><audio controls src="audio3.mp3"></audio></div>
-    <div class="audio-box"><span>Damián</span><audio controls src="audio5.mp3"></audio></div>
-    <div class="audio-box"><span>Raúl</span><audio controls src="audio6.mp3"></audio></div>
-    <div class="audio-box"><span>Marcos</span><audio controls src="audio7.mp3"></audio></div>
-    <div class="audio-box"><span>Alma</span><audio controls src="audio8.mp3"></audio></div>
-    <div class="audio-box"><span>Álvaro</span><audio controls src="audio9.mp3"></audio></div>
-    <div class="audio-box"><span>Sole</span><audio controls src="audio10.mp3"></audio></div>
-    <div class="audio-box"><span>Mario</span><audio controls src="audio11.mp3"></audio></div>
-    <div class="audio-box"><span>Piluca</span><audio controls src="audio12.mp3"></audio></div>
-    <div class="audio-box"><span>Carlos</span><audio controls src="audio13.mp3"></audio></div>
-    <div class="audio-box"><span>Nerea</span><audio controls src="audio14.mp3"></audio></div>
-    <div class="audio-box"><span>Verónica</span><audio controls src="audio15.mp3"></audio></div>
-    <div class="audio-box"><span>Angelines</span><audio controls src="audio16.mp3"></audio></div>
-    <div class="audio-box"><span>Beatriz</span><audio controls src="audio17.mp3"></audio></div>
+  <div class="audio-grid" id="audioGrid">
+    <div class="audio-block"><span>Javier</span><audio controls src="audio1.mp3"></audio></div>
+    <div class="audio-block"><span>Laura</span><audio controls src="audio2.mp3"></audio></div>
+    <div class="audio-block"><span>Cristina</span><audio controls src="audio3.mp3"></audio></div>
+    <div class="audio-block"><span>Damián</span><audio controls src="audio5.mp3"></audio></div>
+    <div class="audio-block"><span>Raúl</span><audio controls src="audio6.mp3"></audio></div>
+    <div class="audio-block"><span>Marcos</span><audio controls src="audio7.mp3"></audio></div>
+    <div class="audio-block"><span>Alma</span><audio controls src="audio8.mp3"></audio></div>
+    <div class="audio-block"><span>Álvaro</span><audio controls src="audio9.mp3"></audio></div>
+    <div class="audio-block"><span>Sole</span><audio controls src="audio10.mp3"></audio></div>
+    <div class="audio-block"><span>Mario</span><audio controls src="audio11.mp3"></audio></div>
+    <div class="audio-block"><span>Piluca</span><audio controls src="audio12.mp3"></audio></div>
+    <div class="audio-block"><span>Carlos</span><audio controls src="audio13.mp3"></audio></div>
+    <div class="audio-block"><span>Nerea</span><audio controls src="audio14.mp3"></audio></div>
+    <div class="audio-block"><span>Verónica</span><audio controls src="audio15.mp3"></audio></div>
+    <div class="audio-block"><span>Angelines</span><audio controls src="audio16.mp3"></audio></div>
+    <div class="audio-block"><span>Beatriz</span><audio controls src="audio17.mp3"></audio></div>
   </div>
+
+  <button class="sorpresa" onclick="reproducirSorpresa()">🎁 Mensaje Sorpresa</button>
+
+  <audio id="sorpresa" src="audio_sorpresa.mp3"></audio>
+
+  <script>
+    const audios = document.querySelectorAll("audio");
+    audios.forEach(audio => {
+      audio.addEventListener("play", () => {
+        audios.forEach(a => {
+          if (a !== audio) a.pause();
+        });
+      });
+    });
+
+    function reproducirSorpresa() {
+      audios.forEach(a => a.pause());
+      const audio = document.getElementById("sorpresa");
+      audio.play();
+    }
+  </script>
+
 </body>
 </html>
