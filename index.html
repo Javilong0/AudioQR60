@@ -7,40 +7,37 @@
   <link rel="icon" href="logo.png" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet" />
   <style>
-   body {
+    body {
       margin: 0;
       padding: 0;
       font-family: 'Playfair Display', serif;
-      background-image: url('fondo.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
+      background: linear-gradient(120deg, #cceeff, #e6f7ff, #cceeff);
+      background-size: 600% 600%;
+      animation: gradientBackground 20s ease infinite;
       text-align: center;
       color: white;
       text-shadow: 2px 2px 5px black;
     }
 
-    header {
-      padding: 40px 20px 20px;
-      animation: fadeInDown 1s ease-out;
+    /* Si fondo.jpg existe, se sobrepone */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-image: url('fondo.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      opacity: 0.35;
+      z-index: -1;
     }
 
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
+    @keyframes gradientBackground {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
-
-    h1 {
-      font-size: 2.8rem;
-      margin-bottom: 0.5rem;
-    }
-
-    h2 {
-      font-size: 1.4rem;
-      margin-top: 0;
-    }
-
 
     header {
       padding: 40px 20px 20px;
