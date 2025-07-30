@@ -115,37 +115,6 @@
       background: rgba(255, 255, 255, 0.4);
       transform: scale(1.05);
     }
-
-    .contador-box {
-      margin: 20px auto 40px;
-      padding: 15px 25px;
-      background: rgba(255, 255, 255, 0.15);
-      border-radius: 20px;
-      backdrop-filter: blur(6px);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 10px;
-      max-width: 300px;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.4);
-    }
-
-    .contador-box button {
-      background: rgba(255, 255, 255, 0.3);
-      color: white;
-      border: none;
-      border-radius: 30px;
-      padding: 8px 16px;
-      font-size: 1rem;
-      cursor: pointer;
-      backdrop-filter: blur(4px);
-      transition: all 0.3s ease;
-    }
-
-    .contador-box button:hover {
-      background: rgba(255, 255, 255, 0.5);
-      transform: scale(1.05);
-    }
   </style>
 </head>
 <body>
@@ -176,14 +145,9 @@
     <div class="audio-box"><span>Beatriz</span><audio controls controlsList="nodownload"><source src="audio17.mp3" type="audio/mpeg"></audio></div>
   </main>
 
-  <div class="contador-box">
-    <div>👀 Visitas: <span id="visitas">–</span></div>
-    <div>❤️ <span id="likes">0</span> <button onclick="modificar('like')">Me gusta</button></div>
-    <div>💔 <span id="dislikes">0</span> <button onclick="modificar('dislike')">No me gusta</button></div>
-  </div>
-
   <script>
     const audios = document.querySelectorAll("audio");
+
     audios.forEach(audio => {
       audio.addEventListener("play", () => {
         audios.forEach(other => {
@@ -198,29 +162,6 @@
       audios[index].currentTime = 0;
       audios[index].play();
     }
-
-    // CountAPI
-    const ns = "audioqr60_yoli";
-    const get = (key, el) => {
-      fetch(`https://api.countapi.xyz/get/${ns}/${key}`)
-        .then(res => res.json())
-        .then(data => document.getElementById(el).innerText = data.value);
-    };
-
-    const hit = (key, el) => {
-      fetch(`https://api.countapi.xyz/hit/${ns}/${key}`)
-        .then(res => res.json())
-        .then(data => document.getElementById(el).innerText = data.value);
-    };
-
-    const modificar = tipo => {
-      hit(tipo, tipo + "s");
-    };
-
-    // Inicializar contadores
-    hit("visitas", "visitas");
-    get("like", "likes");
-    get("dislike", "dislikes");
   </script>
 </body>
 </html>
